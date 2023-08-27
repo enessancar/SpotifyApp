@@ -15,6 +15,19 @@
 		EC352C692A9B720D0097E837 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C682A9B720D0097E837 /* TabBarVC.swift */; };
 		EC352C6C2A9B72E00097E837 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C6B2A9B72E00097E837 /* SearchVC.swift */; };
 		EC352C6E2A9B72EA0097E837 /* LibraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C6D2A9B72EA0097E837 /* LibraryVC.swift */; };
+		EC352C712A9B83E60097E837 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C702A9B83E60097E837 /* AuthVC.swift */; };
+		EC352C732A9B83F70097E837 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C722A9B83F70097E837 /* WelcomeVC.swift */; };
+		EC352C752A9B84330097E837 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C742A9B84330097E837 /* SettingsVC.swift */; };
+		EC352C772A9B86AB0097E837 /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C762A9B86AB0097E837 /* PlayerVC.swift */; };
+		EC352C792A9B86BB0097E837 /* PlaylistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C782A9B86BB0097E837 /* PlaylistVC.swift */; };
+		EC352C7B2A9B86DD0097E837 /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C7A2A9B86DD0097E837 /* SearchResultVC.swift */; };
+		EC352C7D2A9B889B0097E837 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C7C2A9B889B0097E837 /* AuthManager.swift */; };
+		EC352C7F2A9B88A20097E837 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C7E2A9B88A20097E837 /* APICaller.swift */; };
+		EC352C812A9B88B60097E837 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C802A9B88B60097E837 /* HapticsManager.swift */; };
+		EC352C832A9B88D80097E837 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C822A9B88D80097E837 /* Playlist.swift */; };
+		EC352C852A9B88E50097E837 /* AudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C842A9B88E50097E837 /* AudioTrack.swift */; };
+		EC352C872A9B88F30097E837 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C862A9B88F30097E837 /* Artist.swift */; };
+		EC352C892A9B89030097E837 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C882A9B89030097E837 /* UserProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +41,19 @@
 		EC352C682A9B720D0097E837 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		EC352C6B2A9B72E00097E837 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		EC352C6D2A9B72EA0097E837 /* LibraryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryVC.swift; sourceTree = "<group>"; };
+		EC352C702A9B83E60097E837 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
+		EC352C722A9B83F70097E837 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		EC352C742A9B84330097E837 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		EC352C762A9B86AB0097E837 /* PlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
+		EC352C782A9B86BB0097E837 /* PlaylistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistVC.swift; sourceTree = "<group>"; };
+		EC352C7A2A9B86DD0097E837 /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
+		EC352C7C2A9B889B0097E837 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		EC352C7E2A9B88A20097E837 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		EC352C802A9B88B60097E837 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		EC352C822A9B88D80097E837 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		EC352C842A9B88E50097E837 /* AudioTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTrack.swift; sourceTree = "<group>"; };
+		EC352C862A9B88F30097E837 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		EC352C882A9B89030097E837 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +100,7 @@
 		EC352C602A9B6EB50097E837 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EC352C6F2A9B83D00097E837 /* Other */,
 				EC352C6A2A9B72C60097E837 /* Core */,
 				EC352C672A9B71FA0097E837 /* TabBar */,
 			);
@@ -90,6 +117,10 @@
 		EC352C632A9B6EED0097E837 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EC352C822A9B88D80097E837 /* Playlist.swift */,
+				EC352C842A9B88E50097E837 /* AudioTrack.swift */,
+				EC352C862A9B88F30097E837 /* Artist.swift */,
+				EC352C882A9B89030097E837 /* UserProfile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -104,6 +135,9 @@
 		EC352C652A9B6F0B0097E837 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				EC352C7C2A9B889B0097E837 /* AuthManager.swift */,
+				EC352C7E2A9B88A20097E837 /* APICaller.swift */,
+				EC352C802A9B88B60097E837 /* HapticsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -135,6 +169,19 @@
 				EC352C6D2A9B72EA0097E837 /* LibraryVC.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		EC352C6F2A9B83D00097E837 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				EC352C702A9B83E60097E837 /* AuthVC.swift */,
+				EC352C722A9B83F70097E837 /* WelcomeVC.swift */,
+				EC352C742A9B84330097E837 /* SettingsVC.swift */,
+				EC352C762A9B86AB0097E837 /* PlayerVC.swift */,
+				EC352C782A9B86BB0097E837 /* PlaylistVC.swift */,
+				EC352C7A2A9B86DD0097E837 /* SearchResultVC.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,9 +257,22 @@
 				EC352C512A9B6E790097E837 /* HomeVC.swift in Sources */,
 				EC352C6C2A9B72E00097E837 /* SearchVC.swift in Sources */,
 				EC352C6E2A9B72EA0097E837 /* LibraryVC.swift in Sources */,
+				EC352C812A9B88B60097E837 /* HapticsManager.swift in Sources */,
+				EC352C7F2A9B88A20097E837 /* APICaller.swift in Sources */,
+				EC352C7D2A9B889B0097E837 /* AuthManager.swift in Sources */,
 				EC352C4D2A9B6E790097E837 /* AppDelegate.swift in Sources */,
+				EC352C852A9B88E50097E837 /* AudioTrack.swift in Sources */,
+				EC352C712A9B83E60097E837 /* AuthVC.swift in Sources */,
 				EC352C692A9B720D0097E837 /* TabBarVC.swift in Sources */,
 				EC352C4F2A9B6E790097E837 /* SceneDelegate.swift in Sources */,
+				EC352C732A9B83F70097E837 /* WelcomeVC.swift in Sources */,
+				EC352C872A9B88F30097E837 /* Artist.swift in Sources */,
+				EC352C832A9B88D80097E837 /* Playlist.swift in Sources */,
+				EC352C892A9B89030097E837 /* UserProfile.swift in Sources */,
+				EC352C752A9B84330097E837 /* SettingsVC.swift in Sources */,
+				EC352C7B2A9B86DD0097E837 /* SearchResultVC.swift in Sources */,
+				EC352C772A9B86AB0097E837 /* PlayerVC.swift in Sources */,
+				EC352C792A9B86BB0097E837 /* PlaylistVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
