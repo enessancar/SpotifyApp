@@ -29,6 +29,8 @@
 		EC352C872A9B88F30097E837 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C862A9B88F30097E837 /* Artist.swift */; };
 		EC352C892A9B89030097E837 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C882A9B89030097E837 /* UserProfile.swift */; };
 		EC352C8C2A9BBC6C0097E837 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EC352C8B2A9BBC6C0097E837 /* SnapKit */; };
+		EC352C8E2A9C78E70097E837 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C8D2A9C78E70097E837 /* AuthResponse.swift */; };
+		EC352C922A9C80040097E837 /* AlertVC .swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C912A9C80040097E837 /* AlertVC .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		EC352C842A9B88E50097E837 /* AudioTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTrack.swift; sourceTree = "<group>"; };
 		EC352C862A9B88F30097E837 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		EC352C882A9B89030097E837 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		EC352C8D2A9C78E70097E837 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		EC352C912A9C80040097E837 /* AlertVC .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertVC .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				EC352C662A9B6F150097E837 /* Support */,
+				EC352C8F2A9C7FE70097E837 /* Utils */,
 				EC352C652A9B6F0B0097E837 /* Managers */,
 				EC352C642A9B6F060097E837 /* ViewModels */,
 				EC352C632A9B6EED0097E837 /* Models */,
@@ -123,6 +128,7 @@
 				EC352C842A9B88E50097E837 /* AudioTrack.swift */,
 				EC352C862A9B88F30097E837 /* Artist.swift */,
 				EC352C882A9B89030097E837 /* UserProfile.swift */,
+				EC352C8D2A9C78E70097E837 /* AuthResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,6 +190,22 @@
 				EC352C7A2A9B86DD0097E837 /* SearchResultVC.swift */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		EC352C8F2A9C7FE70097E837 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EC352C902A9C7FEE0097E837 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		EC352C902A9C7FEE0097E837 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EC352C912A9C80040097E837 /* AlertVC .swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +290,7 @@
 				EC352C812A9B88B60097E837 /* HapticsManager.swift in Sources */,
 				EC352C7F2A9B88A20097E837 /* APICaller.swift in Sources */,
 				EC352C7D2A9B889B0097E837 /* AuthManager.swift in Sources */,
+				EC352C922A9C80040097E837 /* AlertVC .swift in Sources */,
 				EC352C4D2A9B6E790097E837 /* AppDelegate.swift in Sources */,
 				EC352C852A9B88E50097E837 /* AudioTrack.swift in Sources */,
 				EC352C712A9B83E60097E837 /* AuthVC.swift in Sources */,
@@ -280,6 +303,7 @@
 				EC352C752A9B84330097E837 /* SettingsVC.swift in Sources */,
 				EC352C7B2A9B86DD0097E837 /* SearchResultVC.swift in Sources */,
 				EC352C772A9B86AB0097E837 /* PlayerVC.swift in Sources */,
+				EC352C8E2A9C78E70097E837 /* AuthResponse.swift in Sources */,
 				EC352C792A9B86BB0097E837 /* PlaylistVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

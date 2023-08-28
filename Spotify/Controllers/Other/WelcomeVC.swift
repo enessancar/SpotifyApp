@@ -46,7 +46,14 @@ final class WelcomeVC: UIViewController {
     }
     
     private func handleSignIn(success: Bool) {
-        
+        guard success else {
+            showAlert(alertText: "Oops",
+                      alertMessage: "Something went wrong when signing in")
+            return
+        }
+        let mainAppTabBarVC = TabBarVC()
+        mainAppTabBarVC.modalPresentationStyle = .fullScreen
+        present(mainAppTabBarVC, animated: true)
     }
 }
 
