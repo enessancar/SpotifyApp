@@ -7,16 +7,20 @@
 
 import UIKit
 import SnapKit
+import Lottie
 
 final class WelcomeVC: UIViewController {
     
     private let signInButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .white
+        button.backgroundColor = .systemGreen
         button.setTitle("Sign In with Spotify", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
+        button.setTitleColor(.label, for: .normal)
+        button.layer.cornerRadius = 12
         return button
     }()
+    
+    private var animationView: LottieAnimationView!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -31,6 +35,8 @@ final class WelcomeVC: UIViewController {
         
         view.addSubview(signInButton)
         signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
+        
+        setupAnimationView()
     }
     
     @objc private func didTapSignIn() {
@@ -54,6 +60,19 @@ final class WelcomeVC: UIViewController {
         let mainAppTabBarVC = TabBarVC()
         mainAppTabBarVC.modalPresentationStyle = .fullScreen
         present(mainAppTabBarVC, animated: true)
+    }
+}
+
+//MARK: - Lottie
+extension WelcomeVC {
+    private func setupAnimationView() {
+        animationView = .init(name: "animation_lly4ylod")
+        animationView.frame = view.frame
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.animationSpeed = 1.0
+        view.addSubview(animationView)
+        animationView.play()
     }
 }
 

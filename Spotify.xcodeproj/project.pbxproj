@@ -42,6 +42,8 @@
 		EC352CAA2A9F73D70097E837 /* FeaturedPlaylistsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352CA92A9F73D70097E837 /* FeaturedPlaylistsResponse.swift */; };
 		EC352CAC2A9F84820097E837 /* RecommendedGenresResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352CAB2A9F84820097E837 /* RecommendedGenresResponse.swift */; };
 		EC352CAE2A9F8EF50097E837 /* RecommendationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352CAD2A9F8EF50097E837 /* RecommendationsResponse.swift */; };
+		EC352CB12A9FC5A80097E837 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EC352CB02A9FC5A80097E837 /* Lottie */; };
+		EC352CB32A9FD18A0097E837 /* animation_lly4ylod.json in Resources */ = {isa = PBXBuildFile; fileRef = EC352CB22A9FD18A0097E837 /* animation_lly4ylod.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,7 @@
 		EC352CA92A9F73D70097E837 /* FeaturedPlaylistsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistsResponse.swift; sourceTree = "<group>"; };
 		EC352CAB2A9F84820097E837 /* RecommendedGenresResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedGenresResponse.swift; sourceTree = "<group>"; };
 		EC352CAD2A9F8EF50097E837 /* RecommendationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsResponse.swift; sourceTree = "<group>"; };
+		EC352CB22A9FD18A0097E837 /* animation_lly4ylod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation_lly4ylod.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,7 @@
 			files = (
 				EC352CA62A9E9D620097E837 /* Kingfisher in Frameworks */,
 				EC352C8C2A9BBC6C0097E837 /* SnapKit in Frameworks */,
+				EC352CB12A9FC5A80097E837 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +187,7 @@
 				EC352C4C2A9B6E790097E837 /* AppDelegate.swift */,
 				EC352C4E2A9B6E790097E837 /* SceneDelegate.swift */,
 				EC352C552A9B6E7A0097E837 /* Assets.xcassets */,
+				EC352CB22A9FD18A0097E837 /* animation_lly4ylod.json */,
 				EC352C572A9B6E7A0097E837 /* LaunchScreen.storyboard */,
 			);
 			path = Support;
@@ -275,6 +280,7 @@
 			packageProductDependencies = (
 				EC352C8B2A9BBC6C0097E837 /* SnapKit */,
 				EC352CA52A9E9D620097E837 /* Kingfisher */,
+				EC352CB02A9FC5A80097E837 /* Lottie */,
 			);
 			productName = Spotify;
 			productReference = EC352C492A9B6E790097E837 /* Spotify.app */;
@@ -307,6 +313,7 @@
 			packageReferences = (
 				EC352C8A2A9BBC6C0097E837 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				EC352CA42A9E9D620097E837 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				EC352CAF2A9FC5A80097E837 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = EC352C4A2A9B6E790097E837 /* Products */;
 			projectDirPath = "";
@@ -322,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC352CB32A9FD18A0097E837 /* animation_lly4ylod.json in Resources */,
 				EC352C592A9B6E7A0097E837 /* LaunchScreen.storyboard in Resources */,
 				EC352C562A9B6E7A0097E837 /* Assets.xcassets in Resources */,
 			);
@@ -596,6 +604,14 @@
 				minimumVersion = 7.9.0;
 			};
 		};
+		EC352CAF2A9FC5A80097E837 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -608,6 +624,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EC352CA42A9E9D620097E837 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		EC352CB02A9FC5A80097E837 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC352CAF2A9FC5A80097E837 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
