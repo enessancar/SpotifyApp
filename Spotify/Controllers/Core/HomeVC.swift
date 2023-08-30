@@ -28,6 +28,7 @@ final class HomeVC: UIViewController {
             switch result {
             case .success(let success):
                 print(success.albums.items[0].name)
+                print(success.albums.items.count)
             case .failure(let failure):
                 print(failure.localizedDescription)
             }

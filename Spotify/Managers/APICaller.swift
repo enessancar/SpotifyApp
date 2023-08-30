@@ -53,6 +53,61 @@ final class APICaller {
         }
     }
     
+    public func getFeaturedPlaylists(completion: @escaping(Result<FeaturedPlaylistsResponse, CustomError>) -> ()) {
+        createRequest(with: URL(string: SpotifyConstants.baseAPIURL + "/browse/featured-playlists?limit=2"),
+                      type: .GET) { request in
+            URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data, error == nil else {
+                    completion(.failure(.invalidData))
+                    return
+                }
+                do {
+                    let result = try JSONDecoder().decode(FeaturedPlaylistsResponse.self, from: data)
+                    completion(.success(result))
+                } catch {
+                    completion(.failure(.unableToParseFromJSON))
+                }
+            }.resume()
+        }
+    }
+    
+    public func getRecommendations(genres: Set<String>, completion: @escaping(Result<RecommendationsResponse, CustomError>) -> ()) {
+        let seeds = genres.joined(separator: ",")
+        createRequest(with: URL(string: SpotifyConstants.baseAPIURL + "/recommendations?limit=2&seed_genres=\(seeds)"),
+                      type: .GET) { request in
+            URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data, error == nil else {
+                    completion(.failure(.invalidData))
+                    return
+                }
+                do {
+                    let result = try JSONDecoder().decode(RecommendationsResponse.self, from: data)
+                    completion(.success(result))
+                } catch {
+                    completion(.failure(.unableToParseFromJSON))
+                }
+            }.resume()
+        }
+    }
+    
+    public func getRecommendedGenres(completion: @escaping(Result<RecommendedGenresResponse, CustomError>) -> ()) {
+        createRequest(with: URL(string: SpotifyConstants.baseAPIURL + "/recommendations/available-genre-seeds"),
+                      type: .GET) { request in
+            URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data, error == nil else {
+                    completion(.failure(.invalidData))
+                    return
+                }
+                do {
+                    let result = try JSONDecoder().decode(RecommendedGenresResponse.self, from: data)
+                    completion(.success(result))
+                } catch {
+                    completion(.failure(.unableToParseFromJSON))
+                }
+            }.resume()
+        }
+    }
+    
     private func createRequest(
         with url: URL?,
         type: HTTPMethod,

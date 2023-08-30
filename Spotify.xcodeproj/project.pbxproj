@@ -39,6 +39,9 @@
 		EC352CA32A9E6F360097E837 /* BodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352CA22A9E6F360097E837 /* BodyLabel.swift */; };
 		EC352CA62A9E9D620097E837 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EC352CA52A9E9D620097E837 /* Kingfisher */; };
 		EC352CA82A9F44880097E837 /* NewReleasesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352CA72A9F44880097E837 /* NewReleasesResponse.swift */; };
+		EC352CAA2A9F73D70097E837 /* FeaturedPlaylistsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352CA92A9F73D70097E837 /* FeaturedPlaylistsResponse.swift */; };
+		EC352CAC2A9F84820097E837 /* RecommendedGenresResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352CAB2A9F84820097E837 /* RecommendedGenresResponse.swift */; };
+		EC352CAE2A9F8EF50097E837 /* RecommendationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352CAD2A9F8EF50097E837 /* RecommendationsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +77,9 @@
 		EC352CA02A9E6EEF0097E837 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		EC352CA22A9E6F360097E837 /* BodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyLabel.swift; sourceTree = "<group>"; };
 		EC352CA72A9F44880097E837 /* NewReleasesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesResponse.swift; sourceTree = "<group>"; };
+		EC352CA92A9F73D70097E837 /* FeaturedPlaylistsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistsResponse.swift; sourceTree = "<group>"; };
+		EC352CAB2A9F84820097E837 /* RecommendedGenresResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedGenresResponse.swift; sourceTree = "<group>"; };
+		EC352CAD2A9F8EF50097E837 /* RecommendationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,9 @@
 				EC352C8D2A9C78E70097E837 /* AuthResponse.swift */,
 				EC352C9C2A9E38490097E837 /* SettingsModel.swift */,
 				EC352CA72A9F44880097E837 /* NewReleasesResponse.swift */,
+				EC352CA92A9F73D70097E837 /* FeaturedPlaylistsResponse.swift */,
+				EC352CAB2A9F84820097E837 /* RecommendedGenresResponse.swift */,
+				EC352CAD2A9F8EF50097E837 /* RecommendationsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -325,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC352CAE2A9F8EF50097E837 /* RecommendationsResponse.swift in Sources */,
 				EC352C512A9B6E790097E837 /* HomeVC.swift in Sources */,
 				EC352C6C2A9B72E00097E837 /* SearchVC.swift in Sources */,
 				EC352C6E2A9B72EA0097E837 /* LibraryVC.swift in Sources */,
@@ -349,7 +359,9 @@
 				EC352CA82A9F44880097E837 /* NewReleasesResponse.swift in Sources */,
 				EC352C892A9B89030097E837 /* UserProfile.swift in Sources */,
 				EC352C752A9B84330097E837 /* SettingsVC.swift in Sources */,
+				EC352CAA2A9F73D70097E837 /* FeaturedPlaylistsResponse.swift in Sources */,
 				EC352C7B2A9B86DD0097E837 /* SearchResultVC.swift in Sources */,
+				EC352CAC2A9F84820097E837 /* RecommendedGenresResponse.swift in Sources */,
 				EC352C772A9B86AB0097E837 /* PlayerVC.swift in Sources */,
 				EC352C8E2A9C78E70097E837 /* AuthResponse.swift in Sources */,
 				EC352C792A9B86BB0097E837 /* PlaylistVC.swift in Sources */,

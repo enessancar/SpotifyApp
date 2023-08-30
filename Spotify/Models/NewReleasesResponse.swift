@@ -25,10 +25,3 @@ struct Album: Decodable {
     let total_tracks: Int
     let artists: [Artist]
 }
-
-struct Artist: Decodable {
-    let id: String
-    let name: String
-    let type: String
-    let external_urls: [String: String]
-}
