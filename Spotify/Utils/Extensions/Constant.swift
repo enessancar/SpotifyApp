@@ -13,6 +13,7 @@ enum HTTPMethod: String {
 }
 
 struct SpotifyConstants {
+    static let baseAPIURL = "https://api.spotify.com/v1"
     static let clientID = "e429dd57138e443cb79344e93bfcc8bf"
     static let secretClientID = "0c34fefb5ab04cdb8d6fc1f2dd92cb83"
     static let tokenAPIURL = "https://accounts.spotify.com/api/token"

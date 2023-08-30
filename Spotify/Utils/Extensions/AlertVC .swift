@@ -15,3 +15,9 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
+
+extension String {
+    var asUrl: URL? {
+        return URL(string: self)
+    }
+}

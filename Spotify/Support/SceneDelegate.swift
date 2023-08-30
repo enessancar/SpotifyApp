@@ -17,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         
         if AuthManager.shared.isSignedIn {
+            AuthManager.shared.refreshIfNeeded(completion: nil )
             window.rootViewController = TabBarVC()
         }
         else {
@@ -26,8 +27,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.rootViewController = navVC
         }
         
-        self.window = window
         window.makeKeyAndVisible()
+        self.window = window
     }
 }
 

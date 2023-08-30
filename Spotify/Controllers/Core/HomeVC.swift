@@ -16,9 +16,22 @@ final class HomeVC: UIViewController {
     
     private func configureVC() {
         view.backgroundColor = .systemBackground
-        title = "Home"
+        title = "Browse"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(didTapSettings))
+        
+        fetchData()
+    }
+    
+    private func fetchData() {
+        APICaller.shared.getNewReleases { result in
+            switch result {
+            case .success(let success):
+                print(success.albums.items[0].name)
+            case .failure(let failure):
+                print(failure.localizedDescription)
+            }
+        }
     }
     
     @objc private func didTapSettings() {

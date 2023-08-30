@@ -37,6 +37,8 @@
 		EC352C9D2A9E38490097E837 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352C9C2A9E38490097E837 /* SettingsModel.swift */; };
 		EC352CA12A9E6EEF0097E837 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352CA02A9E6EEF0097E837 /* TitleLabel.swift */; };
 		EC352CA32A9E6F360097E837 /* BodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352CA22A9E6F360097E837 /* BodyLabel.swift */; };
+		EC352CA62A9E9D620097E837 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EC352CA52A9E9D620097E837 /* Kingfisher */; };
+		EC352CA82A9F44880097E837 /* NewReleasesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC352CA72A9F44880097E837 /* NewReleasesResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,7 @@
 		EC352C9C2A9E38490097E837 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		EC352CA02A9E6EEF0097E837 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		EC352CA22A9E6F360097E837 /* BodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyLabel.swift; sourceTree = "<group>"; };
+		EC352CA72A9F44880097E837 /* NewReleasesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC352CA62A9E9D620097E837 /* Kingfisher in Frameworks */,
 				EC352C8C2A9BBC6C0097E837 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +146,7 @@
 				EC352C882A9B89030097E837 /* UserProfile.swift */,
 				EC352C8D2A9C78E70097E837 /* AuthResponse.swift */,
 				EC352C9C2A9E38490097E837 /* SettingsModel.swift */,
+				EC352CA72A9F44880097E837 /* NewReleasesResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 			name = Spotify;
 			packageProductDependencies = (
 				EC352C8B2A9BBC6C0097E837 /* SnapKit */,
+				EC352CA52A9E9D620097E837 /* Kingfisher */,
 			);
 			productName = Spotify;
 			productReference = EC352C492A9B6E790097E837 /* Spotify.app */;
@@ -291,6 +297,7 @@
 			mainGroup = EC352C402A9B6E790097E837;
 			packageReferences = (
 				EC352C8A2A9BBC6C0097E837 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				EC352CA42A9E9D620097E837 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = EC352C4A2A9B6E790097E837 /* Products */;
 			projectDirPath = "";
@@ -339,6 +346,7 @@
 				EC352CA32A9E6F360097E837 /* BodyLabel.swift in Sources */,
 				EC352C872A9B88F30097E837 /* Artist.swift in Sources */,
 				EC352C832A9B88D80097E837 /* Playlist.swift in Sources */,
+				EC352CA82A9F44880097E837 /* NewReleasesResponse.swift in Sources */,
 				EC352C892A9B89030097E837 /* UserProfile.swift in Sources */,
 				EC352C752A9B84330097E837 /* SettingsVC.swift in Sources */,
 				EC352C7B2A9B86DD0097E837 /* SearchResultVC.swift in Sources */,
@@ -568,6 +576,14 @@
 				minimumVersion = 5.6.0;
 			};
 		};
+		EC352CA42A9E9D620097E837 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 7.9.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -575,6 +591,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EC352C8A2A9BBC6C0097E837 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		EC352CA52A9E9D620097E837 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC352CA42A9E9D620097E837 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -30,6 +30,7 @@ final class TabBarVC: UITabBarController {
         viewController.navigationItem.title = title
         viewController.view.backgroundColor = .systemBackground
         navController.tabBarItem.title = title
+        navController.navigationBar.tintColor = .label
         navController.tabBarItem.image = UIImage(systemName: imageName)
         return navController
     }

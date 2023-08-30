@@ -7,6 +7,7 @@
 
 
 import UIKit
+import Kingfisher
 
 final class ProfileVC: UIViewController {
     
@@ -23,7 +24,6 @@ final class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureVC()
-        failedToGetProfile()
     }
     
     private func configureVC() {
@@ -35,7 +35,6 @@ final class ProfileVC: UIViewController {
         
         view.addSubview(tableView)
         fetchProfile()
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -60,12 +59,31 @@ final class ProfileVC: UIViewController {
     private func updateUI(with model: UserProfile) {
         tableView.isHidden = false
         
-        models.append("Full Name: \(model.displayName)")
+        models.append("Full Name: \(model.display_name)")
         models.append("Email Address: \(model.email)")
         models.append("User ID: \(model.id)")
         models.append("Plan: \(model.product)")
-        
+        createTableHeader(with: model.images.first?.url)
         tableView.reloadData()
+    }
+    
+    private func createTableHeader(with string: String?) {
+        guard let urlString = string, let url = URL(string: urlString) else {
+            return
+        }
+        
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.width/1.5))
+        
+        let imageSize: CGFloat = headerView.frame.height / 2
+        let imageView = UIImageView(frame: .init(x: 0, y: 0, width: imageSize, height: imageSize))
+        
+        headerView.addSubview(imageView)
+        imageView.center = headerView.center
+        imageView.contentMode = .scaleAspectFill
+        imageView.kf.setImage(with: url)
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = imageSize / 2
+        tableView.tableHeaderView = headerView
     }
     
     private func failedToGetProfile() {
