@@ -67,7 +67,6 @@ final class WelcomeVC: UIViewController {
 extension WelcomeVC {
     private func setupAnimationView() {
         animationView = .init(name: "animation_lly4ylod")
-        animationView.frame = view.frame
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .loop
         animationView.animationSpeed = 1.0
@@ -79,10 +78,16 @@ extension WelcomeVC {
 extension WelcomeVC {
     private func configureUI() {
         signInButton.snp.makeConstraints { make in
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-30)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(50)
+        }
+        
+        animationView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(125)
+            make.leading.trailing.equalToSuperview()
+            make.height.width.equalTo(300)
         }
     }
 }
