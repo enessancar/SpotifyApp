@@ -242,7 +242,14 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             let viewModel = viewModels[indexPath.row]
+            cell.configure(with: viewModel)
+            return cell
             
+        case .featuredPlaylists(viewModel: let viewModel):
+            return UICollectionViewCell()
+        case .recommendedTracks(viewModel: let viewModel):
+            return UICollectionViewCell()
         }
+        return UICollectionViewCell()
     }
 }
