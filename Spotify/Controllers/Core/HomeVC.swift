@@ -126,7 +126,6 @@ final class HomeVC: UIViewController {
                 featuredPlaylist = model
             case .failure(let error):
                 print(error.localizedDescription)
-                
             }
         }
         
