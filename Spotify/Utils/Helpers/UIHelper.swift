@@ -8,6 +8,7 @@
 import UIKit
 
 enum UIHelper {
+    
     static func createSectionLayout(section: Int) -> NSCollectionLayoutSection {
         let supplementaryViews = [
             NSCollectionLayoutBoundarySupplementaryItem(
@@ -19,7 +20,7 @@ enum UIHelper {
                 alignment: .top
             )
         ]
-        
+
         switch section {
         case 0:
             // Item
@@ -29,9 +30,9 @@ enum UIHelper {
                     heightDimension: .fractionalHeight(1.0)
                 )
             )
-            
+
             item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
-            
+
             // Vertical group in horizontal group
             let verticalGroup = NSCollectionLayoutGroup.vertical(
                 layoutSize: NSCollectionLayoutSize(
@@ -41,7 +42,7 @@ enum UIHelper {
                 subitem: item,
                 count: 3
             )
-            
+
             let horizontalGroup = NSCollectionLayoutGroup.horizontal(
                 layoutSize: NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(0.9),
@@ -50,13 +51,12 @@ enum UIHelper {
                 subitem: verticalGroup,
                 count: 1
             )
-            
+
             // Section
             let section = NSCollectionLayoutSection(group: horizontalGroup)
             section.orthogonalScrollingBehavior = .groupPaging
             section.boundarySupplementaryItems = supplementaryViews
             return section
-            
         case 1:
             // Item
             let item = NSCollectionLayoutItem(
@@ -65,9 +65,9 @@ enum UIHelper {
                     heightDimension: .absolute(200)
                 )
             )
-            
+
             item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
-            
+
             let verticalGroup = NSCollectionLayoutGroup.vertical(
                 layoutSize: NSCollectionLayoutSize(
                     widthDimension: .absolute(200),
@@ -76,7 +76,7 @@ enum UIHelper {
                 subitem: item,
                 count: 2
             )
-            
+
             let horizontalGroup = NSCollectionLayoutGroup.horizontal(
                 layoutSize: NSCollectionLayoutSize(
                     widthDimension: .absolute(200),
@@ -85,7 +85,7 @@ enum UIHelper {
                 subitem: verticalGroup,
                 count: 1
             )
-            
+
             // Section
             let section = NSCollectionLayoutSection(group: horizontalGroup)
             section.orthogonalScrollingBehavior = .continuous
@@ -99,9 +99,9 @@ enum UIHelper {
                     heightDimension: .fractionalHeight(1.0)
                 )
             )
-            
+
             item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
-            
+
             let group = NSCollectionLayoutGroup.vertical(
                 layoutSize: NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1),
@@ -110,7 +110,7 @@ enum UIHelper {
                 subitem: item,
                 count: 1
             )
-            
+
             let section = NSCollectionLayoutSection(group: group)
             section.boundarySupplementaryItems = supplementaryViews
             return section
@@ -122,9 +122,9 @@ enum UIHelper {
                     heightDimension: .fractionalHeight(1.0)
                 )
             )
-            
+
             item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
-            
+
             let group = NSCollectionLayoutGroup.vertical(
                 layoutSize: NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1.0),

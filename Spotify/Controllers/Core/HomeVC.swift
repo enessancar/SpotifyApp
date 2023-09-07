@@ -51,7 +51,6 @@ final class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureVC()
-        setup()
     }
     
     override func viewDidLayoutSubviews() {
@@ -65,13 +64,6 @@ final class HomeVC: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(didTapSettings))
         
-        let layout = UICollectionViewCompositionalLayout { sectionIndex, _ -> NSCollectionLayoutSection? in
-            return UIHelper.createSectionLayout(section: sectionIndex)
-        }
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-    }
-    
-    private func setup() {
         configureCollectionView()
         view.addSubview(spinner)
         fetchData()
@@ -234,6 +226,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let type = sections[indexPath.section]
         switch type {
+            
         case .newReleases(viewModel: let viewModels):
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: NewReleasesCollectionViewCell.identifier,
@@ -244,11 +237,47 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
             cell.configure(with: viewModel)
             return cell
             
-        case .featuredPlaylists(viewModel: let viewModel):
-            return UICollectionViewCell()
-        case .recommendedTracks(viewModel: let viewModel):
-            return UICollectionViewCell()
+        case .featuredPlaylists(viewModel: let viewModels):
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedPlaylistCollectionViewCell.identifier, for: indexPath) as? FeaturedPlaylistCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            let viewModel = viewModels[indexPath.row]
+            cell.configure(with: viewModel)
+            return cell
+            
+        case .recommendedTracks(viewModel: let viewModels):
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendedTrackCollectionViewCell.identifier, for: indexPath) as? RecommendedTrackCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            let viewModel = viewModels[indexPath.row]
+            cell.configure(with: viewModel)
+            return cell
         }
-        return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let section = sections[indexPath.item]
+        
+        switch section {
+        case .newReleases:
+            let album = newAlbums[indexPath.row]
+            let vc = AlbumVC(album: album)
+            vc.title = album.name
+            vc.navigationItem.largeTitleDisplayMode = .never
+            navigationController?.pushViewController(vc, animated: true)
+        case .featuredPlaylists:
+            let playlist = playlists[indexPath.row]
+            let vc = PlaylistVC(playlist: playlist)
+            vc.title = playlist.name
+            vc.navigationItem.largeTitleDisplayMode = .never
+            navigationController?.pushViewController(vc, animated: true)
+        case .recommendedTracks:
+            let playlist = tracks[indexPath.row]
+            let vc = PlaylistVC(playlist: playlist)
+            vc.title = playlist.name
+            vc.navigationItem.largeTitleDisplayMode = .never
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

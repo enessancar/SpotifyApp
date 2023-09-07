@@ -68,6 +68,7 @@ final class FeaturedPlaylistCollectionViewCell: UICollectionViewCell {
         playlistNameLabel.snp.makeConstraints { make in
             make.top.equalTo(playlistCoverImageView.snp.bottom).offset(8)
             make.leading.trailing.equalToSuperview()
+            make.centerX.equalTo(playlistCoverImageView.snp.centerX)
         }
         
         creatorNameLabel.snp.makeConstraints { make in

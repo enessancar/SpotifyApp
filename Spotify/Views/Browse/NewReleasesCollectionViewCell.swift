@@ -45,7 +45,10 @@ final class NewReleasesCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         contentView.backgroundColor = .secondarySystemBackground
         
-        addSubviews(albumCoverImageView, albumNameLabel, artistNameLabel, numberOfTracksLabel)
+        contentView.addSubview(albumCoverImageView)
+        contentView.addSubviews(albumNameLabel, artistNameLabel, numberOfTracksLabel)
+        
+        contentView.clipsToBounds = true
         configureView()
     }
     
@@ -62,9 +65,11 @@ final class NewReleasesCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureView() {
+        let imageSize: CGFloat = contentView.frame.height - 10
+        
         albumCoverImageView.snp.makeConstraints { make in
-            make.leading.top.equalToSuperview().offset(10)
-            make.width.equalTo(80)
+            make.leading.top.equalToSuperview().offset(5)
+            make.width.height.equalTo(imageSize)
         }
         
         albumNameLabel.snp.makeConstraints { make in
@@ -82,7 +87,6 @@ final class NewReleasesCollectionViewCell: UICollectionViewCell {
         numberOfTracksLabel.snp.makeConstraints { make in
             make.leading.equalTo(albumCoverImageView.snp.trailing).offset(8)
             make.bottom.equalToSuperview().offset(-10)
-            make.height.equalTo(20)
         }
     }
     

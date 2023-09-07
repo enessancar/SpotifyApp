@@ -1,19 +1,19 @@
 //
-//  PlaylistVC.swift
+//  AlbumVC.swift
 //  Spotify
 //
-//  Created by Enes Sancar on 27.08.2023.
+//  Created by Enes Sancar on 7.09.2023.
 //
 
 import UIKit
 
-final class PlaylistVC: UIViewController {
+final class AlbumVC: UIViewController {
     
-    private let playlist: Playlist
+    private let album: Album
     
     //MARK: - Init
-    init(playlist: Playlist) {
-        self.playlist = playlist
+    init(album: Album) {
+        self.album = album
         super.init(nibName: nil, bundle: nil)
     }
     
