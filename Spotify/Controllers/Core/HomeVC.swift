@@ -190,7 +190,7 @@ final class HomeVC: UIViewController {
             return RecommendedTrackCellViewModel(
                 name: $0.name,
                 artistName: $0.artists.first?.name ?? "N/A",
-                artworkURL: URL(string: $0.album.images.first?.url ?? "N/A"))
+                artworkURL: URL(string: $0.album?.images.first?.url ?? "N/A"))
         })))
         
         collectionView.reloadData()
@@ -273,11 +273,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
             vc.navigationItem.largeTitleDisplayMode = .never
             navigationController?.pushViewController(vc, animated: true)
         case .recommendedTracks:
-            let playlist = tracks[indexPath.row]
-            let vc = PlaylistVC(playlist: playlist)
-            vc.title = playlist.name
-            vc.navigationItem.largeTitleDisplayMode = .never
-            navigationController?.pushViewController(vc, animated: true)
+            break
         }
     }
 }

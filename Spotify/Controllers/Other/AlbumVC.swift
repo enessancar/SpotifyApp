@@ -25,5 +25,14 @@ final class AlbumVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        
+        APICaller.shared.getAlbumDetails(for: album) { result in
+            switch result {
+            case .success(let success):
+                print(success.name)
+            case .failure(let failure):
+                print(failure.localizedDescription)
+            }
+        }
     }
 }

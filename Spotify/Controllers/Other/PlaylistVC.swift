@@ -25,5 +25,15 @@ final class PlaylistVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        
+        APICaller.shared.getPlaylistDetails(for: playlist) { result in
+            switch result {
+            case .success(let success):
+                print(success)
+            case .failure(let failure):
+                print(failure)
+                print("zort")
+            }
+        }
     }
 }

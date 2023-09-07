@@ -33,6 +33,27 @@ final class APICaller {
             }
     }
     
+    //MARK: - Playlists
+    public func getPlaylistDetails(for playlist: Playlist, completion: @escaping(Result<PlaylistDetailsResponse, CustomError>) -> ()) {
+        createRequest(
+            with: URL(string: SpotifyConstants.baseAPIURL + "/playlists/" + playlist.id),
+            type: .GET) { request in
+                let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                    guard let data, error == nil else {
+                        completion(.failure(.invalidData))
+                        return
+                    }
+                    do {
+                        let result = try JSONDecoder().decode(PlaylistDetailsResponse.self, from: data)
+                        completion(.success(result))
+                    } catch {
+                        completion(.failure(.unableToParseFromJSON))
+                    }
+                }
+                task.resume()
+            }
+    }
+    
     //MARK: - Profile
     public func getCurrentUserProfile(completion: @escaping (Result<UserProfile, CustomError>) -> Void) {
         createRequest(
