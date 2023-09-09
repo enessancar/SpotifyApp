@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class GFBodyLabel: UILabel {
+final class BodyLabel: UILabel {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,6 +21,11 @@ final class GFBodyLabel: UILabel {
     convenience init(textAlignment: NSTextAlignment) {
         self.init(frame: .zero)
         self.textAlignment = textAlignment
+    }
+    
+    convenience init(textColor: UIColor,fontSize: CGFloat, weight: UIFont.Weight) {
+        self.init(frame: .zero)
+        self.font = UIFont.systemFont(ofSize: fontSize, weight: .bold)
     }
 
     private func configure() {

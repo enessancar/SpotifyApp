@@ -22,14 +22,12 @@ final class RecommendedTrackCollectionViewCell: UICollectionViewCell {
     
     private let trackNameLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
         label.font = .systemFont(ofSize: 18, weight: .regular)
         return label
     }()
     
     private let artistNameLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
         label.font = .systemFont(ofSize: 15, weight: .thin)
         return label
     }()
@@ -58,10 +56,12 @@ final class RecommendedTrackCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureView() {
+        let imageSize: CGFloat = contentView.frame.height - 4
+        
         albumCoverImageView.snp.makeConstraints { make in
-            make.leading.top.equalToSuperview().offset(8)
+            make.leading.top.equalToSuperview().offset(4)
             make.bottom.equalToSuperview().offset(-4)
-            make.width.equalTo(64)
+            make.height.width.equalTo(imageSize)
         }
         
         trackNameLabel.snp.makeConstraints { make in

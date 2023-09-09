@@ -24,8 +24,12 @@ final class GFTitleLabel: UILabel {
         self.font = UIFont.systemFont(ofSize: fontSize, weight: .bold)
     }
     
+    convenience init(textColor: UIColor,fontSize: CGFloat, weight: UIFont.Weight) {
+        self.init(frame: .zero)
+        self.font = UIFont.systemFont(ofSize: fontSize, weight: .bold)
+    }
+    
     private func configure() {
-        textColor = .label
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.90
         lineBreakMode = .byTruncatingTail
