@@ -59,6 +59,7 @@
 		EC5F911A2AAA1FC8009B2BF2 /* PlaylistDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F91192AAA1FC8009B2BF2 /* PlaylistDetailsResponse.swift */; };
 		EC5F911C2AAB45BB009B2BF2 /* PlaylistHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F911B2AAB45BB009B2BF2 /* PlaylistHeaderCollectionReusableView.swift */; };
 		EC5F911E2AAB6A22009B2BF2 /* PlaylistHeaderViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F911D2AAB6A22009B2BF2 /* PlaylistHeaderViewViewModel.swift */; };
+		EC5F91202AAC4A27009B2BF2 /* TitleHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F911F2AAC4A27009B2BF2 /* TitleHeaderCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,7 @@
 		EC5F91192AAA1FC8009B2BF2 /* PlaylistDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDetailsResponse.swift; sourceTree = "<group>"; };
 		EC5F911B2AAB45BB009B2BF2 /* PlaylistHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		EC5F911D2AAB6A22009B2BF2 /* PlaylistHeaderViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistHeaderViewViewModel.swift; sourceTree = "<group>"; };
+		EC5F911F2AAC4A27009B2BF2 /* TitleHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				EC5F911B2AAB45BB009B2BF2 /* PlaylistHeaderCollectionReusableView.swift */,
+				EC5F911F2AAC4A27009B2BF2 /* TitleHeaderCollectionReusableView.swift */,
 				EC5F90A62AA0992F009B2BF2 /* Browse */,
 			);
 			path = Views;
@@ -421,6 +424,7 @@
 				EC5F90AC2AA09D4E009B2BF2 /* RecommendedTrackCollectionViewCell.swift in Sources */,
 				EC352C4D2A9B6E790097E837 /* AppDelegate.swift in Sources */,
 				EC5F910C2AA31A50009B2BF2 /* UIHelper.swift in Sources */,
+				EC5F91202AAC4A27009B2BF2 /* TitleHeaderCollectionReusableView.swift in Sources */,
 				EC352C852A9B88E50097E837 /* AudioTrack.swift in Sources */,
 				EC5F911A2AAA1FC8009B2BF2 /* PlaylistDetailsResponse.swift in Sources */,
 				EC352C992A9DCD180097E837 /* Constant.swift in Sources */,
