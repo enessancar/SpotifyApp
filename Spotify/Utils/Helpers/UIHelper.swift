@@ -75,7 +75,7 @@ enum UIHelper {
                 )
             )
             
-            item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+            item.contentInsets = .init(top: 2, leading: 2, bottom: 2, trailing: 2)
             
             let verticalGroup = NSCollectionLayoutGroup.vertical(
                 layoutSize: NSCollectionLayoutSize(

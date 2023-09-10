@@ -59,7 +59,6 @@ final class HomeVC: UIViewController {
     }
     
     private func configureVC() {
-        view.backgroundColor = .systemBackground
         title = "Browse"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(didTapSettings))
