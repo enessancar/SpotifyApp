@@ -8,17 +8,7 @@
 import UIKit
 
 enum UIHelper {
-    
     static func createSectionLayout(section: Int) -> NSCollectionLayoutSection {
-        let supplementaryItem = [
-            NSCollectionLayoutBoundarySupplementaryItem(
-                layoutSize: NSCollectionLayoutSize(
-                    widthDimension: .fractionalWidth(1),
-                    heightDimension: .absolute(50)),
-                elementKind: UICollectionView.elementKindSectionHeader,
-                alignment: .top)
-        ]
-        
         let supplementaryViews = [
             NSCollectionLayoutBoundarySupplementaryItem(
                 layoutSize: NSCollectionLayoutSize(
@@ -75,7 +65,7 @@ enum UIHelper {
                 )
             )
             
-            item.contentInsets = .init(top: 2, leading: 2, bottom: 2, trailing: 2)
+            item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
             
             let verticalGroup = NSCollectionLayoutGroup.vertical(
                 layoutSize: NSCollectionLayoutSize(

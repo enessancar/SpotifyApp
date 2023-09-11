@@ -7,7 +7,7 @@
 
 import UIKit
 import SnapKit
-import  Kingfisher
+import Kingfisher
 
 final class FeaturedPlaylistCollectionViewCell: UICollectionViewCell {
     static let identifier = "FeaturedPlaylistCollectionViewCell"

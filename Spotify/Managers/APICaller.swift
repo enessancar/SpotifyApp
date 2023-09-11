@@ -185,10 +185,12 @@ final class APICaller {
                 }
                 do {
                     let result = try JSONDecoder().decode(CategoryPlaylistsResponse.self, from: data)
+                    completion(.success(result.playlists.items))
                 } catch {
                     completion(.failure(.unableToParseFromJSON))
                 }
             }
+            task.resume()
         }
     }
     

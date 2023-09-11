@@ -115,4 +115,13 @@ extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource {
             artworkURL: URL(string: category.icons.first?.url ?? "-")))
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        let category = categories[indexPath.item]
+        let vc = CategoryVC(category: category)
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
