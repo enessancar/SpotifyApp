@@ -9,8 +9,8 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-final class GenreCollectionViewCell: UICollectionViewCell {
-    static let idenditifier = "GenreCollectionViewCell"
+final class CategoryCollectionViewCell: UICollectionViewCell {
+    static let idenditifier = "CategoryCollectionViewCell"
     
     //MARK: - Properties
     private let imageView: UIImageView = {
@@ -24,7 +24,8 @@ final class GenreCollectionViewCell: UICollectionViewCell {
     private let label: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = .systemFont(ofSize: 22, weight: .semibold)
+        label.font = .systemFont(ofSize: 20, weight: .semibold)
+        label.numberOfLines = 0
         return label
     }()
     
@@ -43,10 +44,11 @@ final class GenreCollectionViewCell: UICollectionViewCell {
     //MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubviews(label, imageView)
-        configureView()
+        contentView.addSubviews(label, imageView)
+        
         layer.cornerRadius = 8
         layer.masksToBounds = true
+        configureView()
     }
     
     required init?(coder: NSCoder) {
@@ -65,6 +67,7 @@ final class GenreCollectionViewCell: UICollectionViewCell {
         
         label.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-8)
             make.bottom.equalToSuperview().offset(-10)
         }
         

@@ -35,8 +35,14 @@ final class SearchVC: UIViewController {
                 count: 2
             )
             group.contentInsets = .init(top: 10, leading: 0, bottom: 10, trailing: 0)
-            return NSCollectionLayoutSection(group: group)
+            
+            let section = NSCollectionLayoutSection(group: group)
+            section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0)
+            
+            return section
         }))
+    
+    private var categories = [Category]()
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -49,10 +55,27 @@ final class SearchVC: UIViewController {
         searchController.searchResultsUpdater = self
         
         view.addSubview(collectionView)
-        collectionView.register(GenreCollectionViewCell.self, forCellWithReuseIdentifier: GenreCollectionViewCell.idenditifier)
+        collectionView.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: CategoryCollectionViewCell.idenditifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .systemBackground
+        
+        fetchCategories()
+    }
+    
+    private func fetchCategories() {
+        APICaller.shared.getCategories { [weak self] result in
+            guard let self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let categories):
+                    self.categories = categories
+                    self.collectionView.reloadData()
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -79,14 +102,17 @@ extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        40
+        categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenreCollectionViewCell.idenditifier, for: indexPath) as? GenreCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.idenditifier, for: indexPath) as? CategoryCollectionViewCell else {
             fatalError()
         }
-        cell.backgroundColor = .systemGreen
+        let category = categories[indexPath.item]
+        cell.configure(with: CategoryCollectionViewCellViewModel(
+            title: category.name,
+            artworkURL: URL(string: category.icons.first?.url ?? "-")))
         return cell
     }
 }

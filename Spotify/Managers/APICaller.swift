@@ -151,6 +151,47 @@ final class APICaller {
         }
     }
     
+    //MARK: - Category
+    public func getCategories(completion: @escaping (Result<[Category], CustomError>) -> Void) {
+            createRequest(
+                with: URL(string: SpotifyConstants.baseAPIURL + "/browse/categories?limit=50"),
+                type: .GET
+            ) { request in
+                let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                    guard let data = data, error == nil else{
+                        completion(.failure(.invalidData))
+                        return
+                    }
+                    do {
+                        let result = try JSONDecoder().decode(AllCategoriesResponse.self,
+                                                              from: data)
+                        completion(.success(result.categories.items))
+                    }
+                    catch {
+                        completion(.failure(.unableToParseFromJSON))
+                    }
+                }
+                task.resume()
+            }
+        }
+    
+    public func getCategoryPlaylist(category: Category, completion: @escaping(Result<[Playlist], CustomError>) -> ()) {
+        createRequest(with: URL(string: SpotifyConstants.baseAPIURL + "/browse/categories/\(category.id)/playlists?limit=50"),
+                      type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data, error == nil else {
+                    completion(.failure(.invalidData))
+                    return
+                }
+                do {
+                    let result = try JSONDecoder().decode(CategoryPlaylistsResponse.self, from: data)
+                } catch {
+                    completion(.failure(.unableToParseFromJSON))
+                }
+            }
+        }
+    }
+    
     private func createRequest(
         with url: URL?,
         type: HTTPMethod,
