@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 final class SearchVC: UIViewController {
     
@@ -52,7 +53,7 @@ final class SearchVC: UIViewController {
     
     private func configureView() {
         navigationItem.searchController = searchController
-        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
         
         view.addSubview(collectionView)
         collectionView.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: CategoryCollectionViewCell.idenditifier)
@@ -85,12 +86,26 @@ final class SearchVC: UIViewController {
 }
 
 //MARK: - Search Result
-extension SearchVC: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
+extension SearchVC: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let resultController = searchController.searchResultsController as? SearchResultVC,
-              let query = searchController.searchBar.text,
+              let query = searchBar.text,
               !query.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
+        }
+        resultController.delegate = self
+        
+        APICaller.shared.search(with: query) { [weak self] result in
+            guard let self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let results):
+                    resultController.update(with: results)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
         }
     }
 }
@@ -123,5 +138,34 @@ extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let vc = CategoryVC(category: category)
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension SearchVC: SearchResultVCDelegate {
+    func didTapResult(_ result: SearchResult) {
+        func didTapResult(_ result: SearchResult) {
+            switch result {
+            case .artist(let model):
+                guard let url = URL(string: model.external_urls["spotify"] ?? "") else {
+                    return
+                }
+                let vc = SFSafariViewController(url: url)
+                present(vc, animated: true)
+                
+            case .album(let model):
+                let vc = AlbumVC(album: model)
+                vc.navigationItem.largeTitleDisplayMode = .never
+                navigationController?.pushViewController(vc, animated: true)
+            case .track(let model):
+               // PlaybackPresenter.shared.startPlayback(
+                  //  from: self, track: model
+               // )
+                break
+            case .playlist(let model):
+                let vc = PlaylistVC(playlist: model)
+                vc.navigationItem.largeTitleDisplayMode = .never
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
 }
