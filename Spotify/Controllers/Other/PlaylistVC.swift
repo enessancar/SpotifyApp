@@ -56,6 +56,7 @@ final class PlaylistVC: UIViewController {
     }
     
     private var viewModels = [RecommendedTrackCellViewModel]()
+    private var tracks = [AudioTrack]()
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -157,7 +158,10 @@ extension PlaylistVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true )
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        let index = indexPath.row
+        //let track =
     }
 }
 
