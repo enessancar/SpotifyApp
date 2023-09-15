@@ -223,6 +223,43 @@ final class APICaller {
             }
     }
     
+    //MARK: - Playlist
+    public func getCurrentUserPlaylist(completion: @escaping(Result<[Playlist], CustomError>) -> ()) {
+        createRequest(
+            with: URL(string: SpotifyConstants.baseAPIURL + "/me/playlists/?limit=50"),
+            type: .GET) { request in
+                let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                    guard let data, error == nil else {
+                        completion(.failure(.invalidData))
+                        return
+                    }
+                    do {
+                        let result = try JSONDecoder().decode(LibraryPlaylistResponse.self, from: data)
+                        completion(.success(result.items))
+                    } catch {
+                        completion(.failure(.unableToParseFromJSON))
+                    }
+                }
+                task.resume()
+            }
+    }
+    
+    public func createPlaylist(with name: String, completion: @escaping(Bool) -> ()) {
+        
+    }
+    
+    public func addTrackToPlaylist(track: AudioTrack,
+                                   playlist: Playlist,
+                                   completion: @escaping(Bool) -> ()) {
+        
+    }
+    
+    public func removeTrackFromPlaylist(track: AudioTrack,
+                                        playlist: Playlist,
+                                        completion: @escaping(Bool) -> ()) {
+        
+    }
+    
     private func createRequest(
         with url: URL?,
         type: HTTPMethod,

@@ -74,6 +74,10 @@
 		EC5F91392AB0F388009B2BF2 /* SearchResultsSubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F91382AB0F388009B2BF2 /* SearchResultsSubtitleTableViewCell.swift */; };
 		EC5F913B2AB0FAB8009B2BF2 /* SearchResultsSubtitleTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F913A2AB0FAB8009B2BF2 /* SearchResultsSubtitleTableViewCellViewModel.swift */; };
 		EC70EA8A2AB2028700F28F2B /* PlaybackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70EA892AB2028700F28F2B /* PlaybackPresenter.swift */; };
+		EC70EA8C2AB36D0C00F28F2B /* LibraryPlaylistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70EA8B2AB36D0C00F28F2B /* LibraryPlaylistResponse.swift */; };
+		EC70EA8F2AB38FCC00F28F2B /* LibraryPlaylistsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70EA8E2AB38FCC00F28F2B /* LibraryPlaylistsVC.swift */; };
+		EC70EA912AB3907F00F28F2B /* LibraryAlbumsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70EA902AB3907F00F28F2B /* LibraryAlbumsVC.swift */; };
+		EC70EA932AB3970B00F28F2B /* LibraryToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70EA922AB3970B00F28F2B /* LibraryToggleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,6 +146,10 @@
 		EC5F91382AB0F388009B2BF2 /* SearchResultsSubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsSubtitleTableViewCell.swift; sourceTree = "<group>"; };
 		EC5F913A2AB0FAB8009B2BF2 /* SearchResultsSubtitleTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsSubtitleTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		EC70EA892AB2028700F28F2B /* PlaybackPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackPresenter.swift; sourceTree = "<group>"; };
+		EC70EA8B2AB36D0C00F28F2B /* LibraryPlaylistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPlaylistResponse.swift; sourceTree = "<group>"; };
+		EC70EA8E2AB38FCC00F28F2B /* LibraryPlaylistsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPlaylistsVC.swift; sourceTree = "<group>"; };
+		EC70EA902AB3907F00F28F2B /* LibraryAlbumsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAlbumsVC.swift; sourceTree = "<group>"; };
+		EC70EA922AB3970B00F28F2B /* LibraryToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryToggleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,7 +212,7 @@
 		EC352C622A9B6EDA0097E837 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EC5F91332AB0BF52009B2BF2 /* SearchResultCell */,
+				EC70EA942AB397B400F28F2B /* Library */,
 				EC5F911B2AAB45BB009B2BF2 /* PlaylistHeaderCollectionReusableView.swift */,
 				EC5F911F2AAC4A27009B2BF2 /* TitleHeaderCollectionReusableView.swift */,
 				EC5F91212AAC6913009B2BF2 /* AlbumTrackCollectionViewCell.swift */,
@@ -233,6 +241,7 @@
 				EC5F912B2AAE47BC009B2BF2 /* AllCategoriesResponse.swift */,
 				EC5F912F2AAF9D42009B2BF2 /* SearchResultResponse.swift */,
 				EC5F91312AAFA454009B2BF2 /* SearchResult.swift */,
+				EC70EA8B2AB36D0C00F28F2B /* LibraryPlaylistResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -295,6 +304,7 @@
 		EC352C6F2A9B83D00097E837 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				EC70EA8D2AB38F1900F28F2B /* Library */,
 				EC352C702A9B83E60097E837 /* AuthVC.swift */,
 				EC352C722A9B83F70097E837 /* WelcomeVC.swift */,
 				EC352C742A9B84330097E837 /* SettingsVC.swift */,
@@ -382,6 +392,24 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		EC70EA8D2AB38F1900F28F2B /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				EC70EA8E2AB38FCC00F28F2B /* LibraryPlaylistsVC.swift */,
+				EC70EA902AB3907F00F28F2B /* LibraryAlbumsVC.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		EC70EA942AB397B400F28F2B /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				EC70EA922AB3970B00F28F2B /* LibraryToggleView.swift */,
+				EC5F91332AB0BF52009B2BF2 /* SearchResultCell */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -467,7 +495,9 @@
 			files = (
 				EC352CAE2A9F8EF50097E837 /* RecommendationsResponse.swift in Sources */,
 				EC352C512A9B6E790097E837 /* HomeVC.swift in Sources */,
+				EC70EA912AB3907F00F28F2B /* LibraryAlbumsVC.swift in Sources */,
 				EC352C6C2A9B72E00097E837 /* SearchVC.swift in Sources */,
+				EC70EA932AB3970B00F28F2B /* LibraryToggleView.swift in Sources */,
 				EC352C6E2A9B72EA0097E837 /* LibraryVC.swift in Sources */,
 				EC352CA12A9E6EEF0097E837 /* TitleLabel.swift in Sources */,
 				EC5F91242AAC7587009B2BF2 /* AlbumCollectionViewCellViewModel.swift in Sources */,
@@ -477,6 +507,7 @@
 				EC5F90AE2AA0B2FC009B2BF2 /* NewReleasesCellViewModel.swift in Sources */,
 				EC5F91082AA27984009B2BF2 /* FeaturedPlaylistCellViewModel.swift in Sources */,
 				EC352C7D2A9B889B0097E837 /* AuthManager.swift in Sources */,
+				EC70EA8F2AB38FCC00F28F2B /* LibraryPlaylistsVC.swift in Sources */,
 				EC352C9D2A9E38490097E837 /* SettingsModel.swift in Sources */,
 				EC70EA8A2AB2028700F28F2B /* PlaybackPresenter.swift in Sources */,
 				EC5F91222AAC6913009B2BF2 /* AlbumTrackCollectionViewCell.swift in Sources */,
@@ -514,6 +545,7 @@
 				EC5F910A2AA31272009B2BF2 /* RecommendedTrackCellViewModel.swift in Sources */,
 				EC352C7B2A9B86DD0097E837 /* SearchResultVC.swift in Sources */,
 				EC5F90A82AA09956009B2BF2 /* NewReleasesCollectionViewCell.swift in Sources */,
+				EC70EA8C2AB36D0C00F28F2B /* LibraryPlaylistResponse.swift in Sources */,
 				EC5F91352AB0BF79009B2BF2 /* SearchResultDefaultTableViewCell.swift in Sources */,
 				EC5F912A2AAE15A3009B2BF2 /* CategoryCollectionViewCellViewModel.swift in Sources */,
 				EC352CAC2A9F84820097E837 /* RecommendedGenresResponse.swift in Sources */,

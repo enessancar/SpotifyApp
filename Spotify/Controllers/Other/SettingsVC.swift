@@ -50,11 +50,12 @@ final class SettingsVC: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { _ in
             AuthManager.shared.signOut { [weak self] signedOut in
+                guard let self else { return }
                 if signedOut {
                     DispatchQueue.main.async {
                         let navVC = UINavigationController(rootViewController: WelcomeVC())
                         navVC.modalPresentationStyle = .fullScreen
-                        self?.present(navVC, animated: true)
+                        self.present(navVC, animated: true)
                     }
                 }
             }
@@ -78,11 +79,11 @@ final class SettingsVC: UIViewController {
 // MARK: - TableView
 extension SettingsVC: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        sections.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections[section].options.count
+        sections[section].options.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
