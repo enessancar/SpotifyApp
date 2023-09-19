@@ -12,13 +12,13 @@ struct SearchSection {
     let results: [SearchResult]
 }
 
-protocol SearchResultVCDelegate: AnyObject {
+protocol SearchResultsVCDelegate: AnyObject {
     func didTapResult(_ result: SearchResult)
 }
 
-class SearchResultVC: UIViewController {
+final class SearchResultsVC: UIViewController  {
 
-    weak var delegate: SearchResultVCDelegate?
+    weak var delegate: SearchResultsVCDelegate?
 
     private var sections: [SearchSection] = []
 
@@ -88,12 +88,12 @@ class SearchResultVC: UIViewController {
     }
 }
 
-extension SearchResultVC: UITableViewDelegate, UITableViewDataSource {
-    
+//MARK: - TableView Delegate/DataSource
+extension SearchResultsVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections[section].results.count
     }
@@ -112,7 +112,7 @@ extension SearchResultVC: UITableViewDelegate, UITableViewDataSource {
             let viewModel = SearchResultDefaultTableViewCellViewModel(
                 title: artist.name,
                 imageURL: URL(string: artist.images?.first?.url ?? "")
-                )
+            )
             cell.configure(with: viewModel)
             return cell
         case .album(let album):
@@ -168,5 +168,9 @@ extension SearchResultVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section].title
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        50
     }
 }

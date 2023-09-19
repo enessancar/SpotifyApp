@@ -82,7 +82,7 @@ final class AlbumVC: UIViewController {
     }
     
     @objc private func didTapActions() {
-        
+         
     }
     
     private func fetchData() {
@@ -148,12 +148,13 @@ extension AlbumVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         
-        var track = tracks[indexPath.item]
+        let track = tracks[indexPath.item]
+        PlaybackPresenter.startPlayback(from: self, track: track)
     }
 }
 
 extension AlbumVC: PlaylistHeaderCollectionReusableViewDelegate {
     func playlistHeaderCollectionReusableViewDidTapPlayAll(_ header: PlaylistHeaderCollectionReusableView) {
-        print("")
+        PlaybackPresenter.startPlayback(from: self, track: tracks)
     }
 }

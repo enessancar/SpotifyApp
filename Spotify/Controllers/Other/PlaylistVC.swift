@@ -109,6 +109,7 @@ final class PlaylistVC: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let model):
+                    self.tracks = model.tracks.items.compactMap({$0.track})
                     self.viewModels = model.tracks.items.compactMap({
                         RecommendedTrackCellViewModel(
                             name: $0.track.name,
@@ -161,12 +162,13 @@ extension PlaylistVC: UICollectionViewDelegate, UICollectionViewDataSource {
         collectionView.deselectItem(at: indexPath, animated: true)
         
         let index = indexPath.row
-        //let track =
+        let track = tracks[index]
+        PlaybackPresenter.startPlayback(from: self, track: track)
     }
 }
 
 extension PlaylistVC: PlaylistHeaderCollectionReusableViewDelegate {
     func playlistHeaderCollectionReusableViewDidTapPlayAll(_ header: PlaylistHeaderCollectionReusableView) {
-        print("Playing all")
+        PlaybackPresenter.startPlayback(from: self, track: tracks)
     }
 }

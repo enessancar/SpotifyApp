@@ -2,7 +2,7 @@
 //  UIHelper.swift
 //  Spotify
 //
-//  Created by Enes Sancar on 2.09.2023.
+//  Created by Enes Sancar on 17.09.2023.
 //
 
 import UIKit
@@ -138,3 +138,4 @@ enum UIHelper {
         }
     }
 }
+

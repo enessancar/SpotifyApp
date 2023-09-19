@@ -12,7 +12,7 @@ final class SearchVC: UIViewController {
     
     //MARK: - Properties
     private let searchController: UISearchController = {
-        let vc = UISearchController(searchResultsController: SearchResultVC())
+        let vc = UISearchController(searchResultsController: SearchResultsVC())
         vc.searchBar.placeholder = "Songs, Artists, Albums"
         vc.searchBar.searchBarStyle = .minimal
         vc.definesPresentationContext = true
@@ -89,7 +89,7 @@ final class SearchVC: UIViewController {
 extension SearchVC: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let resultController = searchController.searchResultsController as? SearchResultVC,
+        guard let resultController = searchController.searchResultsController as? SearchResultsVC,
               let query = searchBar.text,
               !query.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
@@ -142,7 +142,7 @@ extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 }
 
-extension SearchVC: SearchResultVCDelegate {
+extension SearchVC: SearchResultsVCDelegate {
     func didTapResult(_ result: SearchResult) {
         func didTapResult(_ result: SearchResult) {
             switch result {
@@ -158,9 +158,7 @@ extension SearchVC: SearchResultVCDelegate {
                 vc.navigationItem.largeTitleDisplayMode = .never
                 navigationController?.pushViewController(vc, animated: true)
             case .track(let model):
-               // PlaybackPresenter.shared.startPlayback(
-                  //  from: self, track: model
-               // )
+                PlaybackPresenter.startPlayback(from: self, track: model)
                 break
             case .playlist(let model):
                 let vc = PlaylistVC(playlist: model)

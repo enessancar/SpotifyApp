@@ -59,7 +59,7 @@ final class SearchResultDefaultTableViewCell: UITableViewCell {
         label.snp.makeConstraints { make in
             make.leading.equalTo(iconImageView.snp.trailing).offset(10)
             make.trailing.equalToSuperview().offset(-10)
-            make.height.equalTo(height)
+            make.centerY.equalToSuperview()
         }
     }
     

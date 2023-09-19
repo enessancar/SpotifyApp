@@ -98,3 +98,4 @@ final class NewReleasesCollectionViewCell: UICollectionViewCell {
         numberOfTracksLabel.text = "Tracks: \(viewModels.numberOfTracks)"
     }
 }
+

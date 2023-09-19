@@ -97,23 +97,25 @@ class LibraryToggleView: UIView {
             make.leading.equalTo(playlistButton.snp.trailing)
             make.width.height.top.equalTo(playlistButton)
         }
-        
         layoutIndicator()
     }
-
+    
     func layoutIndicator() {
         switch state {
         case .playlist:
             indicatorView.snp.makeConstraints { make in
+                make.leading.equalToSuperview()
                 make.width.equalTo(90)
                 make.height.equalTo(3)
                 make.top.equalTo(playlistButton.snp.bottom)
             }
+            
         case .album:
             indicatorView.snp.makeConstraints { make in
+                make.leading.equalToSuperview().offset(100)
+                make.top.equalTo(albumsButton.snp.bottom)
                 make.width.equalTo(90)
                 make.height.equalTo(3)
-                make.top.equalTo(albumsButton.snp.bottom)
             }
         }
     }

@@ -34,9 +34,13 @@ final class SearchResultsSubtitleTableViewCell: UITableViewCell {
     //MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubviews(label, subtitleLabel, iconImageView)
+        contentView.addSubview(label)
+        contentView.addSubview(subtitleLabel)
+        contentView.addSubview(iconImageView)
+        
         contentView.clipsToBounds = true
         accessoryType = .disclosureIndicator
+        configureView()
     }
     
     required init?(coder: NSCoder) {

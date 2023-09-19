@@ -32,7 +32,7 @@ final class LibraryVC: UIViewController {
         scrollView.delegate = self
         view.addSubview(scrollView)
         scrollView.contentSize = .init(width: view.frame.width + 2, height: scrollView.frame.height)
-        scrollView.backgroundColor = .yellow
+        
         
         configureView()
         addChildren()
@@ -41,7 +41,7 @@ final class LibraryVC: UIViewController {
     private func configureView() {
         scrollView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(55)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(60)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
         
